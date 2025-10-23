@@ -178,18 +178,19 @@ export class GameOverScene extends BaseScene {
   }
 
   private getPerformanceMessage(): string {
-    if (this.finalScore >= 1000) {
-      return 'Xuất sắc! Bạn là chuyên gia lịch sử!';
+    if (this.finalScore >= 5000) {
+      return 'Xuất sắc! Bạn là chuyên gia về an toàn thực phẩm!'
+    } else if (this.finalScore >= 3000) {
+      return 'Tuyệt vời! Kiến thức của bạn rất tốt!'
+    } else if (this.finalScore >= 1000) {
+      return 'Tốt! Hãy tiếp tục cố gắng!'
     } else if (this.finalScore >= 500) {
-      return 'Tuyệt vời! Kiến thức của bạn rất tốt!';
-    } else if (this.finalScore >= 200) {
-      return 'Tốt! Hãy tiếp tục cố gắng!';
-    } else if (this.finalScore >= 100) {
-      return 'Khá tốt! Còn nhiều điều để học!';
+      return 'Khá tốt! Bạn hãy cố gắng hơn nữa nhé!'
     } else {
-      return 'Hãy thử lại! Bạn sẽ làm tốt hơn!';
+      return 'Hãy thử lại! Bạn sẽ làm tốt hơn ở lần sau nè!'
     }
   }
+
 
   private animateScore(scoreText: Phaser.GameObjects.Text): void {
     const startScore = 0;

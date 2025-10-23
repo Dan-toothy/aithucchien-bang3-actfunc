@@ -173,7 +173,7 @@ export class MainMenuScene extends BaseScene {
     graphics.fillGradientStyle(0x3b82f6, 0x3b82f6, 0x10b981, 0x10b981, 1)
     graphics.fillRect(0, 0, width, height)
 
-    const title = this.add.text(width / 2, height * 0.25, 'NGƯỜI CHẠY TRI THỨC', {
+    const title = this.add.text(width / 2, height * 0.25, 'Trò chơi: NGƯỜI CHẠY TRI THỨC', {
       fontSize: '64px',
       color: '#DC2626',
       fontStyle: 'bold',
@@ -198,14 +198,6 @@ export class MainMenuScene extends BaseScene {
 
     this.createButton(width / 2, height * 0.45, 'BẮT ĐẦU', () => {
       this.transitionToScene('GamePlayScene')
-    })
-
-    this.createButton(width / 2, height * 0.55, 'CÀI ĐẶT', () => {
-      console.log('Settings clicked - not implemented yet')
-    })
-
-    this.createButton(width / 2, height * 0.65, 'HƯỚNG DẪN', () => {
-      console.log('Instructions clicked - not implemented yet')
     })
 
     const version = this.add.text(width - 10, height - 10, 'v1.0.0', {
@@ -1137,16 +1129,16 @@ export class GameOverScene extends BaseScene {
   }
 
   private getPerformanceMessage(): string {
-    if (this.finalScore >= 1000) {
-      return 'Xuất sắc! Bạn là chuyên gia lịch sử!'
-    } else if (this.finalScore >= 500) {
+    if (this.finalScore >= 5000) {
+      return 'Xuất sắc! Bạn là chuyên gia về an toàn thực phẩm!'
+    } else if (this.finalScore >= 3000) {
       return 'Tuyệt vời! Kiến thức của bạn rất tốt!'
-    } else if (this.finalScore >= 200) {
+    } else if (this.finalScore >= 1000) {
       return 'Tốt! Hãy tiếp tục cố gắng!'
-    } else if (this.finalScore >= 100) {
-      return 'Khá tốt! Còn nhiều điều để học!'
+    } else if (this.finalScore >= 500) {
+      return 'Khá tốt! Bạn hãy cố gắng hơn nữa nhé!'
     } else {
-      return 'Hãy thử lại! Bạn sẽ làm tốt hơn!'
+      return 'Hãy thử lại! Bạn sẽ làm tốt hơn ở lần sau nè!'
     }
   }
 
