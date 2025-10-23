@@ -831,9 +831,368 @@ export class QuestionManager {
 	},
 	"correct": "C",
 	"explanation": "Chia sẻ kiến thức về an toàn thực phẩm với bạn bè là một hành động tốt để cùng nhau bảo vệ sức khỏe."
+  },
+  {
+    "id": 21,
+    "difficulty": "easy",
+    "question": "Nên uống bao nhiêu nước mỗi ngày?",
+    "options": {
+      "A": "Khi nào khát thì uống",
+      "B": "Khoảng 8 ly mỗi ngày",
+      "C": "Uống càng nhiều càng tốt"
+    },
+    "correct": "B",
+    "explanation": "Uống đủ nước giúp cơ thể khỏe mạnh."
+  },
+  {
+    "id": 22,
+    "difficulty": "medium",
+    "question": "Tại sao cần ăn nhiều loại rau củ?",
+    "options": {
+      "A": "Để cung cấp đủ vitamin",
+      "B": "Vì rau củ có màu đẹp",
+      "C": "Để no lâu hơn"
+    },
+    "correct": "A",
+    "explanation": "Mỗi loại rau củ chứa vitamin khác nhau."
+  },
+  {
+    "id": 23,
+    "difficulty": "easy",
+    "question": "Thực phẩm nào chứa nhiều canxi?",
+    "options": {
+      "A": "Sữa và các sản phẩm từ sữa",
+      "B": "Kẹo và bánh ngọt",
+      "C": "Nước ngọt có ga"
+    },
+    "correct": "A",
+    "explanation": "Canxi giúp xương và răng chắc khỏe."
+  },
+  {
+    "id": 24,
+    "difficulty": "medium",
+    "question": "Ăn quá nhiều đồ ngọt có hại không?",
+    "options": {
+      "A": "Không, vì đồ ngọt rất ngon",
+      "B": "Có, có thể gây sâu răng",
+      "C": "Chỉ có hại khi ăn vào buổi tối"
+    },
+    "correct": "B",
+    "explanation": "Đường trong đồ ngọt là thức ăn cho vi khuẩn."
+  },
+  {
+    "id": 25,
+    "difficulty": "hard",
+    "question": "Chất béo bão hòa có trong thực phẩm nào?",
+    "options": {
+      "A": "Mỡ động vật, bơ, phô mai",
+      "B": "Dầu ô liu, quả bơ",
+      "C": "Các loại hạt và cá"
+    },
+    "correct": "A",
+    "explanation": "Nên hạn chế ăn chất béo bão hòa."
+  },
+  {
+    "id": 26,
+    "difficulty": "easy",
+    "question": "Bữa ăn sáng có quan trọng không?",
+    "options": {
+      "A": "Không, có thể bỏ qua",
+      "B": "Rất quan trọng, cung cấp năng lượng",
+      "C": "Chỉ quan trọng với người lớn"
+    },
+    "correct": "B",
+    "explanation": "Bữa sáng giúp khởi đầu ngày mới hiệu quả."
+  },
+  {
+    "id": 27,
+    "difficulty": "medium",
+    "question": "Thực phẩm hữu cơ là gì?",
+    "options": {
+      "A": "Thực phẩm được trồng tự nhiên",
+      "B": "Thực phẩm có giá đắt",
+      "C": "Thực phẩm nhập khẩu"
+    },
+    "correct": "A",
+    "explanation": "Thực phẩm hữu cơ không dùng hóa chất."
+  },
+  {
+    "id": 28,
+    "difficulty": "hard",
+    "question": "Probiotic có lợi ích gì cho sức khỏe?",
+    "options": {
+      "A": "Giúp hệ tiêu hóa khỏe mạnh",
+      "B": "Làm cho tóc bóng mượt",
+      "C": "Tăng chiều cao nhanh chóng"
+    },
+    "correct": "A",
+    "explanation": "Probiotic là những vi khuẩn có lợi."
+  },
+  {
+    "id": 29,
+    "difficulty": "easy",
+    "question": "Nên làm gì khi bị hóc thức ăn?",
+    "options": {
+      "A": "Cố gắng nuốt xuống",
+      "B": "Ho mạnh và vỗ lưng",
+      "C": "Uống thật nhiều nước"
+    },
+    "correct": "B",
+    "explanation": "Ho mạnh giúp đẩy dị vật ra ngoài."
+  },
+  {
+    "id": 30,
+    "difficulty": "medium",
+    "question": "Tại sao không nên vừa ăn vừa xem TV?",
+    "options": {
+      "A": "Vì sẽ không tập trung vào phim",
+      "B": "Vì dễ ăn quá nhiều",
+      "C": "Vì mẹ không cho phép"
+    },
+    "correct": "B",
+    "explanation": "Xem TV khiến ta không nhận ra khi no."
+  },
+  {
+    "id": 31,
+    "difficulty": "easy",
+    "question": "Ăn cá có tốt không?",
+    "options": {
+      "A": "Rất tốt, chứa nhiều omega-3",
+      "B": "Không tốt, vì cá có xương",
+      "C": "Chỉ tốt cho người già"
+    },
+    "correct": "A",
+    "explanation": "Omega-3 tốt cho não bộ và mắt."
+  },
+  {
+    "id": 32,
+    "difficulty": "hard",
+    "question": "Chất chống oxy hóa có trong đâu?",
+    "options": {
+      "A": "Trái cây và rau củ màu sẫm",
+      "B": "Thịt đỏ và đồ chiên rán",
+      "C": "Bánh mì trắng và mì gói"
+    },
+    "correct": "A",
+    "explanation": "Chất này giúp bảo vệ tế bào cơ thể."
+  },
+  {
+    "id": 33,
+    "difficulty": "medium",
+    "question": "Ngũ cốc nguyên hạt là gì?",
+    "options": {
+      "A": "Là các loại hạt chưa xay xát",
+      "B": "Là ngũ cốc có vị ngọt",
+      "C": "Là ngũ cốc dành cho chim"
+    },
+    "correct": "A",
+    "explanation": "Ngũ cốc nguyên hạt giàu chất xơ."
+  },
+  {
+    "id": 34,
+    "difficulty": "easy",
+    "question": "Tại sao cần ngủ đủ giấc?",
+    "options": {
+      "A": "Để cơ thể phục hồi năng lượng",
+      "B": "Để không bị bố mẹ mắng",
+      "C": "Để có nhiều thời gian mơ"
+    },
+    "correct": "A",
+    "explanation": "Ngủ đủ giấc giúp học tập tốt hơn."
+  },
+  {
+    "id": 35,
+    "difficulty": "medium",
+    "question": "Thực phẩm nào dễ gây dị ứng?",
+    "options": {
+      "A": "Hải sản, đậu phộng, sữa",
+      "B": "Cơm, rau muống, thịt lợn",
+      "C": "Nước lọc, táo, chuối"
+    },
+    "correct": "A",
+    "explanation": "Cần cẩn thận khi ăn lần đầu."
+  },
+  {
+    "id": 36,
+    "difficulty": "hard",
+    "question": "Chỉ số đường huyết (GI) là gì?",
+    "options": {
+      "A": "Tốc độ làm tăng đường trong máu",
+      "B": "Lượng đường có trong thực phẩm",
+      "C": "Độ ngọt của thực phẩm"
+    },
+    "correct": "A",
+    "explanation": "Thực phẩm GI thấp tốt cho sức khỏe."
+  },
+  {
+    "id": 37,
+    "difficulty": "easy",
+    "question": "Nên ăn tối trước khi đi ngủ bao lâu?",
+    "options": {
+      "A": "Khoảng 2-3 tiếng",
+      "B": "Ngay trước khi đi ngủ",
+      "C": "Không quan trọng"
+    },
+    "correct": "A",
+    "explanation": "Ăn quá no gần giờ ngủ không tốt."
+  },
+  {
+    "id": 38,
+    "difficulty": "medium",
+    "question": "Vitamin C có nhiều trong loại quả nào?",
+    "options": {
+      "A": "Cam, chanh, ổi, dâu tây",
+      "B": "Chuối, dưa hấu, nho",
+      "C": "Táo, lê, mận"
+    },
+    "correct": "A",
+    "explanation": "Vitamin C giúp tăng cường miễn dịch."
+  },
+  {
+    "id": 39,
+    "difficulty": "hard",
+    "question": "Thế nào là một chế độ ăn cân bằng?",
+    "options": {
+      "A": "Đủ các nhóm chất dinh dưỡng",
+      "B": "Ăn tất cả những gì mình thích",
+      "C": "Chỉ ăn rau và trái cây"
+    },
+    "correct": "A",
+    "explanation": "Cần có đạm, tinh bột, chất béo, vitamin."
+  },
+  {
+    "id": 40,
+    "difficulty": "easy",
+    "question": "Tập thể dục có lợi ích gì?",
+    "options": {
+      "A": "Giúp cơ thể khỏe mạnh, dẻo dai",
+      "B": "Làm chúng ta mệt mỏi",
+      "C": "Chỉ dành cho vận động viên"
+    },
+    "correct": "A",
+    "explanation": "Nên vận động thường xuyên mỗi ngày."
+  },
+  {
+    "id": 41,
+    "difficulty": "medium",
+    "question": "Tại sao nên hạn chế ăn đồ hộp?",
+    "options": {
+      "A": "Vì có thể chứa nhiều muối, chất bảo quản",
+      "B": "Vì không ngon bằng đồ tươi",
+      "C": "Vì mở hộp rất khó"
+    },
+    "correct": "A",
+    "explanation": "Đồ tươi sống luôn là lựa chọn tốt nhất."
+  },
+  {
+    "id": 42,
+    "difficulty": "hard",
+    "question": "Chất xơ có vai trò gì?",
+    "options": {
+      "A": "Hỗ trợ tiêu hóa, ngăn ngừa táo bón",
+      "B": "Cung cấp năng lượng cho cơ thể",
+      "C": "Giúp da trắng hơn"
+    },
+    "correct": "A",
+    "explanation": "Chất xơ có nhiều trong rau xanh, ngũ cốc."
+  },
+  {
+    "id": 43,
+    "difficulty": "easy",
+    "question": "Khi bị sốt, nên ăn gì?",
+    "options": {
+      "A": "Cháo loãng, súp, uống nhiều nước",
+      "B": "Đồ chiên rán, nhiều dầu mỡ",
+      "C": "Kem và nước đá lạnh"
+    },
+    "correct": "A",
+    "explanation": "Cần ăn đồ dễ tiêu và đủ nước."
+  },
+  {
+    "id": 44,
+    "difficulty": "medium",
+    "question": "Nên làm gì để bảo vệ răng miệng?",
+    "options": {
+      "A": "Đánh răng sau khi ăn và trước khi ngủ",
+      "B": "Chỉ đánh răng vào buổi sáng",
+      "C": "Ăn nhiều kẹo cao su"
+    },
+    "correct": "A",
+    "explanation": "Chải răng đúng cách giúp ngừa sâu răng."
+  },
+  {
+    "id": 45,
+    "difficulty": "hard",
+    "question": "Thực phẩm biến đổi gen (GMO) là gì?",
+    "options": {
+      "A": "Thực phẩm có gen được thay đổi",
+      "B": "Thực phẩm được trồng ở nước ngoài",
+      "C": "Thực phẩm có hình dạng lạ"
+    },
+    "correct": "A",
+    "explanation": "An toàn của GMO vẫn còn gây tranh cãi."
+  },
+  {
+    "id": 46,
+    "difficulty": "easy",
+    "question": "Nên ngồi như thế nào khi ăn?",
+    "options": {
+      "A": "Ngồi thẳng lưng, ngay ngắn",
+      "B": "Nằm trên giường để ăn",
+      "C": "Vừa đi vừa ăn"
+    },
+    "correct": "A",
+    "explanation": "Tư thế ngồi đúng giúp tiêu hóa tốt hơn."
+  },
+  {
+    "id": 47,
+    "difficulty": "medium",
+    "question": "Uống trà sữa có tốt không?",
+    "options": {
+      "A": "Nên uống có chừng mực",
+      "B": "Hoàn toàn tốt cho sức khỏe",
+      "C": "Uống thay nước lọc hàng ngày"
+    },
+    "correct": "A",
+    "explanation": "Trà sữa thường chứa nhiều đường và chất béo."
+  },
+  {
+    "id": 48,
+    "difficulty": "hard",
+    "question": "Làm sao để giảm lượng muối trong bữa ăn?",
+    "options": {
+      "A": "Hạn chế chấm và nêm nếm",
+      "B": "Dùng muối hồng thay muối trắng",
+      "C": "Ăn nhiều đồ ăn vặt hơn"
+    },
+    "correct": "A",
+    "explanation": "Ăn nhiều muối không tốt cho tim mạch."
+  },
+  {
+    "id": 49,
+    "difficulty": "easy",
+    "question": "Khi ăn xong, con nên làm gì?",
+    "options": {
+      "A": "Phụ giúp dọn dẹp bàn ăn",
+      "B": "Bỏ đi chơi ngay lập tức",
+      "C": "Ngồi xem TV luôn"
+    },
+    "correct": "A",
+    "explanation": "Giúp đỡ bố mẹ là một thói quen tốt."
+  },
+  {
+    "id": 50,
+    "difficulty": "medium",
+    "question": "Tại sao cần ăn chậm, nhai kỹ?",
+    "options": {
+      "A": "Để hệ tiêu hóa hoạt động tốt hơn",
+      "B": "Để kéo dài thời gian bữa ăn",
+      "C": "Để không bị người khác ăn hết phần"
+    },
+    "correct": "A",
+    "explanation": "Nhai kỹ giúp dạ dày làm việc nhẹ nhàng hơn."
   }
-
-    ]
+]
   }
 }
 
@@ -1091,4 +1450,3 @@ export class QuestionValidator {
       .replace(/\//g, '&#x2F;')
   }
 }
-
