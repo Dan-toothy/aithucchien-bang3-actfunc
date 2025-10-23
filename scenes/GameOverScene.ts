@@ -83,10 +83,6 @@ export class GameOverScene extends BaseScene {
     });
     performanceText.setOrigin(0.5);
 
-    this.createButton(width / 2, height * 0.7, 'CHƠI LẠI', () => {
-      this.transitionToScene('GamePlayScene');
-    });
-
     this.createButton(width / 2, height * 0.8, 'MENU CHÍNH', () => {
       this.transitionToScene('MainMenuScene');
     });
