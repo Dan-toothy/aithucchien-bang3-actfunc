@@ -60,6 +60,7 @@ export class GamePlayScene extends BaseScene {
 
   preload() {
     this.preloadSharedAssets();
+    this.load.spritesheet('mascot', 'assets/spritesheet.png', { frameWidth: 128, frameHeight: 128 });
     this.questionManager = QuestionManager.getInstance();
   }
 
@@ -72,12 +73,19 @@ export class GamePlayScene extends BaseScene {
     }).setOrigin(0.5);
 
     try {
-      await this.questionManager.loadQuestions('/data/questions.json');
+      await this.questionManager.loadQuestions('./data/questions.json');
       loadingText.destroy();
     } catch (error) {
       loadingText.setText('Error loading questions!');
       return;
     }
+
+    this.anims.create({
+      key: 'run',
+      frames: this.anims.generateFrameNumbers('mascot', { start: 0, end: 9 }),
+      frameRate: 10,
+      repeat: -1,
+    });
 
     this.createTrack();
     this.createPlayer();
@@ -173,54 +181,16 @@ export class GamePlayScene extends BaseScene {
     this.player.setDepth(100);
     const runner = this.createRunnerCharacter();
     this.player.add(runner);
-    this.time.addEvent({
-      delay: 150,
-      callback: () => this.animateRunner(),
-      loop: true,
-    });
   }
 
   private createRunnerCharacter(): Phaser.GameObjects.Container {
     const runner = this.add.container(0, 0);
-    const body = this.add.rectangle(0, -10, 20, 25, 0xdc2626);
-    const head = this.add.circle(0, -28, 8, 0xffd4a3);
-    const hair = this.add.ellipse(0, -32, 14, 8, 0x000000);
-    const leftArm = this.add.rectangle(-10, -8, 4, 16, 0xffd4a3);
-    leftArm.setName('leftArm');
-    const rightArm = this.add.rectangle(10, -8, 4, 16, 0xffd4a3);
-    rightArm.setName('rightArm');
-    const leftLeg = this.add.rectangle(-5, 8, 6, 18, 0x333333);
-    leftLeg.setName('leftLeg');
-    const rightLeg = this.add.rectangle(5, 8, 6, 18, 0x333333);
-    rightLeg.setName('rightLeg');
-    const leftFoot = this.add.rectangle(-5, 18, 8, 4, 0x000000);
-    leftFoot.setName('leftFoot');
-    const rightFoot = this.add.rectangle(5, 18, 8, 4, 0x000000);
-    rightFoot.setName('rightFoot');
-    runner.add([body, head, hair, leftArm, rightArm, leftLeg, rightLeg, leftFoot, rightFoot]);
+    const mascot = this.add.sprite(0, 0, 'mascot');
+    mascot.play('run');
+    mascot.setScale(0.5); // Adjust scale as needed
+    runner.add(mascot);
     runner.setName('runner');
     return runner;
-  }
-
-  private animateRunner() {
-    if (!this.player || this.isPaused) return;
-    const runner = this.player.getByName('runner') as Phaser.GameObjects.Container;
-    if (!runner) return;
-    const leftArm = runner.getByName('leftArm') as Phaser.GameObjects.Rectangle;
-    const rightArm = runner.getByName('rightArm') as Phaser.GameObjects.Rectangle;
-    const leftLeg = runner.getByName('leftLeg') as Phaser.GameObjects.Rectangle;
-    const rightLeg = runner.getByName('rightLeg') as Phaser.GameObjects.Rectangle;
-    const leftFoot = runner.getByName('leftFoot') as Phaser.GameObjects.Rectangle;
-    const rightFoot = runner.getByName('rightFoot') as Phaser.GameObjects.Rectangle;
-    const animState = leftArm.x > 0 ? 1 : -1;
-    leftArm.x = -10 * animState;
-    leftArm.y = -8 + Math.abs(animState) * 2;
-    rightArm.x = 10 * animState;
-    rightArm.y = -8 + Math.abs(animState) * 2;
-    leftLeg.y = 8 - animState * 2;
-    rightLeg.y = 8 + animState * 2;
-    leftFoot.y = 18 - animState * 3;
-    rightFoot.y = 18 + animState * 3;
   }
 
   private createUI() {

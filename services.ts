@@ -47,7 +47,7 @@ export class ApiClient {
   private sessionId: string | null = null
 
   private constructor() {
-    this.baseUrl = import.meta.env.VITE_API_URL
+    this.baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000'
     this.loadSession()
   }
 
@@ -377,7 +377,7 @@ export class QuestionManager {
         }
       }
 
-      const questions = await this.fetchQuestions(source || '/data/questions.json');
+      const questions = await this.fetchQuestions(source || '/data/questions.json')
 
       this.questionPool.all = questions
       this.questionPool.available = [...questions]
@@ -595,7 +595,7 @@ export class QuestionManager {
       {
         id: 1,
         difficulty: 'easy',
-        question: 'Ngày Quốc khánh Việt Nam là ngày nào?',
+        question: 'Tú sinh ngày mấy',
         options: { A: '2 tháng 9', B: '30 tháng 4' },
         correct: 'A',
         explanation: 'Ngày 2/9/1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn độc lập',
@@ -603,6 +603,15 @@ export class QuestionManager {
       },
       {
         id: 2,
+        difficulty: 'easy',
+        question: 'Ngày Quốc khánh Việt Nam là ngày nào?',
+        options: { A: '2 tháng 9', B: '30 tháng 4' },
+        correct: 'A',
+        explanation: 'Ngày 2/9/1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn độc lập',
+        category: 'Lịch sử'
+      },
+      {
+        id: 3,
         difficulty: 'easy',
         question: 'Thủ đô của Việt Nam là gì?',
         options: { A: 'Hà Nội', B: 'Hồ Chí Minh' },
@@ -868,3 +877,4 @@ export class QuestionValidator {
       .replace(/\//g, '&#x2F;')
   }
 }
+
