@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}{{ tab.display_name }}{% endblock %}
+
+{% block content %}
+<!-- Tab Header -->
+<section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-effect rounded-xl p-8">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">{{ tab.display_name }}</h1>
+                <p class="text-gray-600 text-lg">
+                    Browse all articles in the {{ tab.display_name|lower }} category
+                </p>
+                <div class="mt-4 flex justify-center items-center space-x-4">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 1 1 0 000 2H6a2 2 0 100 4h2a2 2 0 100-4h-.5a1 1 0 000-2H8a2 2 0 012 2v9a2 2 0 11-4 0V5z" clip-rule="evenodd"></path>
+                        </svg>
+                        {{ tab.article_count }} articles
+                    </span>
+                </div>
+            </div>
+
+            <!-- Articles Grid -->
+            {% if articles %}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {% for article in articles %}
+                <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-[1.02]">
+                    <!-- Article Header -->
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-3">
+                            <a href="/article/{{ article.file_info.tab }}/{{ article.file_info.filename.replace('.md', '') }}"
+                               class="hover:text-primary transition">
+                                {{ article.title }}
+                            </a>
+                        </h2>
+
+                        <!-- Metadata -->
+                        <div class="flex flex-wrap gap-2 items-center text-sm text-gray-500 mb-4">
+                            {% if article.author %}
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                                {{ article.author }}
+                            </div>
+                            {% endif %}
+                            {% if article.date %}
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                {{ article.date.strftime('%B %d, %Y') }}
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Excerpt -->
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            {{ article.excerpt }}
+                        </p>
+
+                        <!-- Tags -->
+                        {% if article.tags %}
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            {% for tag in article.tags %}
+                            <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded">
+                                #{{ tag }}
+                            </span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <!-- Read More -->
+                        <a href="/article/{{ article.file_info.tab }}/{{ article.file_info.filename.replace('.md', '') }}"
+                           class="inline-flex items-center text-primary hover:text-secondary font-semibold transition">
+                            Read Full Article
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="text-center py-12">
+                <svg class="w-24 h-24 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                <p class="text-gray-500 text-lg">No articles found in this category</p>
+                <p class="text-gray-400 mt-2">Check back later for new content</p>
+                <a href="/" class="inline-block mt-4 text-primary hover:text-secondary font-semibold">
+                    ← Return to Home
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Navigation -->
+<section class="py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+            <a href="/" class="inline-flex items-center text-gray-600 hover:text-primary transition">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<style>
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
+{% endblock %}
+

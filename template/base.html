@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% block description %}Event Information Platform - Your source for event details and articles{% endblock %}">
+    <meta name="keywords" content="events, information, articles, news">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{% block og_title %}Event Information Website{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Discover comprehensive information about various events{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:image" content="{% block og_image %}/static/images/og-default.jpg{% endblock %}">
+
+    <title>{% block title %}Event Information{% endblock %} - Event Information Platform</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#667eea',
+                        secondary: '#764ba2',
+                        accent: '#f093fb'
+                    },
+                    animation: {
+                        'gradient': 'gradient 15s ease infinite',
+                    },
+                    keyframes: {
+                        'gradient': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Alpine.js for interactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Custom CSS -->
+    <style>
+        .gradient-bg {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="min-h-screen gradient-bg">
+    <!-- Navigation -->
+    <nav class="glass-effect shadow-lg sticky top-0 z-50" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-2-2h-2"></path>
+                        </svg>
+                        <span class="text-xl font-bold text-gray-800">Thông tin Sự kiện</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-700 hover:text-primary transition duration-200">Trang chủ</a>
+                    <a href="/tab/events" class="text-gray-700 hover:text-primary transition duration-200">Sự kiện</a>
+                    <a href="/tab/history" class="text-gray-700 hover:text-primary transition duration-200">Lịch sử</a>
+                    <a href="/tab/national-day" class="text-gray-700 hover:text-primary transition duration-200">Ngày Quốc khánh</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden glass-effect">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/" class="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Trang chủ</a>
+                <a href="/tab/events" class="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Sự kiện</a>
+                <a href="/tab/history" class="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Lịch sử</a>
+                <a href="/tab/national-day" class="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">Ngày Quốc khánh</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-effect mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Giới thiệu</h3>
+                    <p class="text-gray-600">Nguồn thông tin toàn diện về các sự kiện và bài viết. Cập nhật thông tin về các sự kiện và lễ kỷ niệm quan trọng.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Liên kết nhanh</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-600 hover:text-primary">Trang chủ</a></li>
+                        <li><a href="/tab/events" class="text-gray-600 hover:text-primary">Sự kiện</a></li>
+                        <li><a href="/tab/history" class="text-gray-600 hover:text-primary">Lịch sử</a></li>
+                        <li><a href="/tab/national-day" class="text-gray-600 hover:text-primary">Ngày Quốc khánh</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Liên hệ</h3>
+                    <p class="text-gray-600">Vô được chung kết sẽ có thông tin liên hệ.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-gray-200">
+                <p class="text-center text-gray-500 text-sm">
+                    &copy; 2025 Xây dựng bởi nhóm ActFunc.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
+
