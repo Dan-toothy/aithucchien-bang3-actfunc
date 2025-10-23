@@ -72,7 +72,7 @@ export class GamePlayScene extends BaseScene {
     }).setOrigin(0.5);
 
     try {
-      await this.questionManager.loadQuestions('./data/questions.json');
+      await this.questionManager.loadQuestions('/data/questions.json');
       loadingText.destroy();
     } catch (error) {
       loadingText.setText('Error loading questions!');

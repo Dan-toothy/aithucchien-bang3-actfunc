@@ -47,7 +47,7 @@ export class ApiClient {
   private sessionId: string | null = null
 
   private constructor() {
-    this.baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+    this.baseUrl = import.meta.env.VITE_API_URL
     this.loadSession()
   }
 
@@ -377,7 +377,7 @@ export class QuestionManager {
         }
       }
 
-      const questions = await this.fetchQuestions(source || '/data/questions.json')
+      const questions = await this.fetchQuestions(source || '/data/questions.json');
 
       this.questionPool.all = questions
       this.questionPool.available = [...questions]
@@ -868,4 +868,3 @@ export class QuestionValidator {
       .replace(/\//g, '&#x2F;')
   }
 }
-

@@ -17,6 +17,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "types": ["vite/client", "node"],
 
     /* Linting */
     "forceConsistentCasingInFileNames": true,
@@ -34,6 +35,6 @@
       "@services/*": ["src/services/*"]
     }
   },
-  "include": ["src"],
+  "include": ["."],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

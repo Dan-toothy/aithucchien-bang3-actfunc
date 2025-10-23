@@ -8,46 +8,5 @@
         "distDir": "dist"
       }
     }
-  ],
-  "routes": [
-    {
-      "src": "/We Are Here.mp3",
-      "dest": "/We Are Here.mp3"
-    },
-    {
-      "src": "/data/(.*)",
-      "dest": "/data/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
   ]
 }
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/We Are Here.mp3",
-      "dest": "/We Are Here.mp3"
-    },
-    {
-      "src": "/data/(.*)",
-      "dest": "/data/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ]
-}
-
