@@ -592,24 +592,247 @@ export class QuestionManager {
 
   private getDefaultQuestions(): Question[] {
     return [
-      {
-        id: 1,
-        difficulty: 'easy',
-        question: 'Ngày Quốc khánh Việt Nam là ngày nào?',
-        options: { A: '2 tháng 9', B: '30 tháng 4' },
-        correct: 'A',
-        explanation: 'Ngày 2/9/1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn độc lập',
-        category: 'Lịch sử'
-      },
-      {
-        id: 2,
-        difficulty: 'easy',
-        question: 'Thủ đô của Việt Nam là gì?',
-        options: { A: 'Hà Nội', B: 'Hồ Chí Minh' },
-        correct: 'A',
-        explanation: 'Hà Nội là thủ đô của Việt Nam từ năm 1010',
-        category: 'Địa lý'
-      }
+  {
+	"id": 1,
+	"difficulty": "easy",
+	"question": "Trước khi ăn, chúng ta nên làm gì để giữ tay sạch sẽ?",
+	"options": {
+	  "A": "Rửa tay với xà phòng",
+	  "B": "Lau tay vào quần",
+	  "C": "Không cần làm gì cả"
+	},
+	"correct": "A",
+	"explanation": "Rửa tay với xà phòng trước khi ăn giúp loại bỏ vi khuẩn có hại."
+  },
+  {
+	"id": 2,
+	"difficulty": "easy",
+	"question": "Khi mua bánh kẹo, con nên chọn sản phẩm có bao bì như thế nào?",
+	"options": {
+	  "A": "Bao bì rách, hở",
+	  "B": "Bao bì còn nguyên vẹn",
+	  "C": "Không có bao bì"
+	},
+	"correct": "B",
+	"explanation": "Bao bì nguyên vẹn giúp bảo vệ thực phẩm khỏi bụi bẩn và vi khuẩn."
+  },
+  {
+	"id": 3,
+	"difficulty": "easy",
+	"question": "Nước uống nào sau đây là an toàn nhất?",
+	"options": {
+	  "A": "Nước đun sôi để nguội",
+	  "B": "Nước lã từ vòi",
+	  "C": "Nước hàng rong"
+	},
+	"correct": "A",
+	"explanation": "Nước đun sôi để nguội đã được diệt khuẩn, an toàn cho sức khỏe."
+  },
+  {
+	"id": 4,
+	"difficulty": "easy",
+	"question": "Khi thấy rau có màu sắc quá bóng, quá mỡ màng, con nên làm gì?",
+	"options": {
+	  "A": "Mua ngay vì quá ngon",
+	  "B": "Cẩn thận, không mua",
+	  "C": "Ăn thử xem có vị gì lạ không"
+	},
+	"correct": "B",
+	"explanation": "Rau quả quá bóng bẩy có thể chứa hóa chất không tốt cho sức khỏe."
+  },
+  {
+	"id": 5,
+	"difficulty": "medium",
+	"question": "Để phân biệt nước mắm thật, con có thể làm gì?",
+	"options": {
+	  "A": "Lắc chai",
+	  "B": "Nếm thử",
+	  "C": "Kiểm tra nhãn mác"
+	},
+	"correct": "C",
+	"explanation": "Sản phẩm có nhãn mác, địa chỉ sản xuất rõ ràng thường đáng tin cậy hơn."
+  },
+  {
+	"id": 6,
+	"difficulty": "medium",
+	"question": "Thức ăn bán ở cổng trường thường có màu sắc sặc sỡ, con nên làm gì?",
+	"options": {
+	  "A": "Mua ăn ngay",
+	  "B": "Hỏi ý kiến bạn",
+	  "C": "Hạn chế hoặc không ăn"
+	},
+	"correct": "C",
+	"explanation": "Thực phẩm có màu sắc quá sặc sỡ có thể chứa phẩm màu công nghiệp, không tốt cho sức khỏe."
+  },
+  {
+	"id": 7,
+	"difficulty": "easy",
+	"question": "Khi trái cây bị dập, nát một phần, con nên làm gì?",
+	"options": {
+	  "A": "Cắt bỏ phần hỏng",
+	  "B": "Không nên ăn",
+	  "C": "Rửa sạch rồi ăn cả quả"
+	},
+	"correct": "B",
+	"explanation": "Phần dập nát là nơi vi khuẩn dễ phát triển và có thể lây lan ra cả quả."
+  },
+  {
+	"id": 8,
+	"difficulty": "medium",
+	"question": "Hạn sử dụng trên bao bì sản phẩm cho con biết điều gì?",
+	"options": {
+	  "A": "Cho vui",
+	  "B": "Ngày sản phẩm ngon nhất",
+	  "C": "Ngày cuối cùng an toàn để sử dụng"
+	},
+	"correct": "C",
+	"explanation": "Không nên sử dụng thực phẩm đã quá hạn sử dụng để đảm bảo an toàn."
+  },
+  {
+	"id": 9,
+	"difficulty": "easy",
+	"question": "Thịt có màu lạ hoặc mùi hôi thì con nên làm gì?",
+	"options": {
+	  "A": "Rửa sạch rồi nấu chín kỹ",
+	  "B": "Tuyệt đối không ăn",
+	  "C": "Cắt bỏ phần có màu lạ"
+	},
+	"correct": "B",
+	"explanation": "Thịt có dấu hiệu ôi thiu có thể gây ngộ độc thực phẩm, dù đã nấu chín."
+  },
+  {
+	"id": 10,
+	"difficulty": "hard",
+	"question": "Làm thế nào để nhận biết bim bim, snack an toàn?",
+	"options": {
+	  "A": "Gói bim bim phồng to, cứng",
+	  "B": "Có ghi rõ nhà sản xuất và HSD",
+	  "C": "Được bán ở gần trường học"
+	},
+	"correct": "B",
+	"explanation": "Thông tin rõ ràng trên bao bì là dấu hiệu của một sản phẩm được kiểm soát chất lượng."
+  },
+  {
+	"id": 11,
+	"difficulty": "medium",
+	"question": "Tại sao không nên ăn đồ ăn vặt không rõ nguồn gốc bán ở cổng trường?",
+	"options": {
+	  "A": "Vì không ngon bằng đồ ăn mẹ nấu",
+	  "B": "Vì có thể không hợp vệ sinh",
+	  "C": "Vì đắt tiền"
+	},
+	"correct": "B",
+	"explanation": "Đồ ăn vặt không rõ nguồn gốc thường không đảm bảo vệ sinh an toàn thực phẩm."
+  },
+  {
+	"id": 12,
+	"difficulty": "easy",
+	"question": "Rau củ quả trước khi ăn sống (không nấu chín) cần được làm gì?",
+	"options": {
+	  "A": "Rửa sạch dưới vòi nước chảy",
+	  "B": "Chỉ cần lau bằng khăn",
+	  "C": "Không cần rửa"
+	},
+	"correct": "A",
+	"explanation": "Rửa rau củ quả giúp loại bỏ bụi bẩn, thuốc trừ sâu và vi khuẩn."
+  },
+  {
+	"id": 13,
+	"difficulty": "medium",
+	"question": "Nếu thấy một loại sữa có tên và bao bì gần giống một thương hiệu nổi tiếng, con nên làm gì?",
+	"options": {
+	  "A": "Mua uống thử vì chắc cũng ngon",
+	  "B": "Kiểm tra kỹ tên thương hiệu",
+	  "C": "Chọn loại rẻ hơn"
+	},
+	"correct": "B",
+	"explanation": "Hàng giả, hàng nhái thường bắt chước các thương hiệu nổi tiếng. Cần kiểm tra kỹ để tránh mua phải sản phẩm kém chất lượng."
+  },
+  {
+	"id": 14,
+	"difficulty": "hard",
+	"question": "Xiên que, cá viên chiên bán rong thường được chiên bằng loại dầu nào?",
+	"options": {
+	  "A": "Dầu ăn mới, sạch sẽ",
+	  "B": "Dầu ăn đã được sử dụng",
+	  "C": "Dầu ăn cũ cao cấp"
+	},
+	"correct": "B",
+	"explanation": "Dầu chiên đi chiên lại nhiều lần có thể biến chất và gây hại cho sức khỏe."
+  },
+  {
+	"id": 15,
+	"difficulty": "easy",
+	"question": "Thực phẩm bị mốc có ăn được không?",
+	"options": {
+	  "A": "Cắt bỏ phần mốc đi là ăn được",
+	  "B": "Tuyệt đối không",
+	  "C": "Nấu ở nhiệt độ cao sẽ hết mốc"
+	},
+	"correct": "B",
+	"explanation": "Nấm mốc có thể tạo ra độc tố nguy hiểm, không thể loại bỏ bằng cách cắt bỏ hay đun nấu."
+  },
+  {
+	"id": 16,
+	"difficulty": "medium",
+	"question": "Khi đi mua hàng, con nên chọn trứng gà như thế nào?",
+	"options": {
+	  "A": "Vỏ trứng có vết nứt, dính bẩn",
+	  "B": "Vỏ trứng sạch sẽ, không có vết nứt",
+	  "C": "Trứng có giá rẻ nhất"
+	},
+	"correct": "B",
+	"explanation": "Vỏ trứng bị nứt là nơi vi khuẩn dễ dàng xâm nhập vào bên trong."
+  },
+  {
+	"id": 17,
+	"difficulty": "hard",
+	"question": "Nước ngọt có màu lạ, vị khác thường được bán trong chai không nhãn mác ở cổng trường, con sẽ làm gì?",
+	"options": {
+	  "A": "Uống thử xem đó là vị gì",
+	  "B": "Không uống và nói nhà trường biết",
+	  "C": "Mua cho bạn bè uống cùng"
+	},
+	"correct": "B",
+	"explanation": "Tuyệt đối không sử dụng thực phẩm, đồ uống không rõ nguồn gốc, không nhãn mác để bảo vệ sức khỏe của mình."
+  },
+  {
+	"id": 18,
+	"difficulty": "easy",
+	"question": "Thức ăn đã nấu chín nên được bảo quản như thế nào nếu chưa ăn ngay?",
+	"options": {
+	  "A": "Để ở ngoài bàn ăn",
+	  "B": "Cất trong tủ lạnh",
+	  "C": "Để ở đâu cũng được"
+	},
+	"correct": "B",
+	"explanation": "Bảo quản thức ăn trong tủ lạnh giúp ngăn chặn vi khuẩn phát triển."
+  },
+  {
+	"id": 19,
+	"difficulty": "medium",
+	"question": "Để nhận biết thịt lợn có chứa chất tạo nạc (salbutamol), con có thể quan sát dấu hiệu nào?",
+	"options": {
+	  "A": "Thịt có lớp mỡ mỏng, màu đỏ tươi bất thường",
+	  "B": "Thịt có màu hồng nhạt, lớp mỡ dày",
+	  "C": "Thịt có mùi thơm"
+	},
+	"correct": "A",
+	"explanation": "Thịt lợn siêu nạc có màu đỏ rực, lớp mỡ rất mỏng là dấu hiệu có thể chứa chất cấm."
+  },
+  {
+	"id": 20,
+	"difficulty": "hard",
+	"question": "Nếu bạn con đang ăn một loại kẹo không rõ nguồn gốc mua ở cổng trường, con sẽ nói gì với bạn?",
+	"options": {
+	  "A": "Xin ăn thử một viên",
+	  "B": "Kệ bạn, không quan tâm",
+	  "C": "Khuyên bạn không nên ăn"
+	},
+	"correct": "C",
+	"explanation": "Chia sẻ kiến thức về an toàn thực phẩm với bạn bè là một hành động tốt để cùng nhau bảo vệ sức khỏe."
+  }
+
     ]
   }
 }

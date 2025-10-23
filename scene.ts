@@ -187,7 +187,7 @@ export class MainMenuScene extends BaseScene {
     const description = this.add.text(
       width / 2,
       height * 0.35,
-      'Cùng ActFunc chạy và tìm hiểu thêm về Việt Nam nha!',
+      'Cùng ActFunc tìm hiểu về an toàn vệ sinh thực phẩm nha 🥰🥰',
       {
         fontSize: '20px',
         color: '#ffffff',
